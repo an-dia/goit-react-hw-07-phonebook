@@ -1,0 +1,29 @@
+{
+  "contacts": [
+    {
+      "name": "Angelina Jolie",
+      "number": "33-33-33",
+      "id": 1
+    },
+    {
+      "name": "Johnny Depp",
+      "number": "22-22-22",
+      "id": 2
+    },
+    {
+      "name": "Marilin Manson",
+      "number": "66-66-66",
+      "id": 6
+    },
+    {
+      "name": "Rosie Simpson",
+      "number": "459-12-56",
+      "id": 7
+    },
+    {
+      "name": "An_Dia",
+      "number": "8678654",
+      "id": 8
+    }
+  ]
+}
