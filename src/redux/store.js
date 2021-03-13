@@ -9,10 +9,10 @@ import {
   REGISTER,
 } from 'redux-persist';
 import logger from 'redux-logger';
-import contactsReducer from './contacts/contacts-reducer';
+import {contactsReducer} from './contacts';
 
 const myMiddleware = store => next => action => {
-  console.log('My middleware', action);
+  // console.log('My middleware', action);
   
   //передаёт управление экшенам дальше по цепочке
   next(action);
@@ -35,7 +35,7 @@ const store = configureStore({
   contacts: contactsReducer,
 },
   middleware,
-  devTools: process.env.NODE_ENV === 'development',
+  // devTools: process.env.NODE_ENV === 'development',
 });
 
 // const persistor = persistStore(store);

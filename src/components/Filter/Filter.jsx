@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
-import * as contactsActions from '../../redux/contacts/contacts-actions';
 import PropTypes from 'prop-types';
 import s from './Filter.module.css';
 import shortid from 'shortid';
+import { contactsSelectors, changeFilter } from '../../redux/contacts';
+// import * as contactsActions from '../../redux/contacts/contacts-actions';
+// import contactsSelectors from '../../redux/contacts/contacts-selectors';
 
 const Filter = ({ name, onChange }) => {
   let inputFilterId = shortid.generate();
@@ -29,12 +31,12 @@ Filter.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  value: state.contacts.filter,
+const mapStateToProps = state => ({
+  value: contactsSelectors.getFilter(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  onChange: event => dispatch(contactsActions.changeFilter(event.target.value)),
+  onChange: event => dispatch(changeFilter(event.target.value)),
 });
 
 

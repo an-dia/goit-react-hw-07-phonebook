@@ -7,6 +7,7 @@ import s from './ContactForm.module.css';
 import shortid from 'shortid';
 import Alert from '../Alert';
 import alertStyle from '../../transitionsStyles/fadeAlertStyle.module.css';
+import contactsSelectors from '../../redux/contacts/contacts-selectors';
 
 class ContactForm extends Component {
   static propTypes = {
@@ -112,7 +113,7 @@ class ContactForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  contacts: state.contacts.items,
+  contacts: contactsSelectors.getContacts(state),
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,15 +1,11 @@
 import { connect } from 'react-redux';
-import contactsOperations from '../../redux/contacts/contacts-operations';
 import ContactList from './ContactList';
+// import contactsOperations from '../../redux/contacts/contacts-operations';
+// import contactsSelectors from '../../redux/contacts/contacts-selectors';
+import { contactsOperations, contactsSelectors } from '../../redux/contacts';
 
-const getVisibleContacts = (allContacts, filter) => {
-    const normalizedFilter = filter.toLowerCase();
-
-    return allContacts.filter(({name}) => name.toLowerCase().includes(normalizedFilter));
-  };
-
-const mapStateToProps = ({contacts: {items, filter}}) => ({
-  contacts: getVisibleContacts(items,  filter),
+const mapStateToProps = (state) => ({
+  contacts: contactsSelectors.getVisibleContacts(state),
 });
 
 const mapDispatchToProps = dispatch => ({

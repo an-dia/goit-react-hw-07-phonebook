@@ -10,7 +10,7 @@ import {
   deleteContactRequest,
   deleteContactSuccess,
   deleteContactError,
-  changeFilter
+  changeFilter,
 } from './contacts-actions';
 
 // console.log(actions.addContact.type);
@@ -39,6 +39,7 @@ const loading = createReducer(false, {
 const filter = createReducer('', {
   [changeFilter]: (_, { payload }) => payload,
 });
+
 
 const error = createReducer(null, {
   [fetchContactsError]: (_, { payload }) => payload,
